@@ -1,0 +1,17 @@
+{
+  "name": "proyectoingresosrestaurante",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Borja Gadea Soler - borjaprogrammer@gmail.com",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.11.0"
+  }
+}
