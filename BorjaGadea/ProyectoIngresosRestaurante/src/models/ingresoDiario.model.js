@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const ingresoDiarioEsquema = new mongoose.Schema({
-  fechaIngresoDiario: {type: Data, required: true, default:mongoose.now()}, 
+  fechaIngresoDiario: {type: Date, required: true, default:mongoose.now()}, 
   semanaIngresoDiario: {type: Number, required: true, min:1, max:53},
-  anio:{type: Data, required: true, min: 2026},
+  anio:{type: Date, required: true, min: 2026},
   totalCajaEfectivo: {type: Number, required: true},
   totalCajaTarjeta: {type: Number, required: true},
   cajaB: {type: Number, required: false, default: 0},

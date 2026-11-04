@@ -10,20 +10,18 @@ const videogameSchema = new mongoose.Schema({
     title:{type:String, required:true, trim:true},
     studio: {type:String, trim:true, default: "Unknown Studio"},
     releaseYear:{type:Number, required:false, min:1990, max:2100},
-    genre: {type:Strig, enum: GENRES, default:"Other"},
+    genre: {type:String, enum: GENRES, default:"Other"},
     pegi:{type:Number, enum: PEGI_VALUES, default:12},
     price:{type:Number, min:0, default:0},
     raiting:{type:Number, min:0, max:10, default:0},
     multiplayer:{type: Boolean, default:false},
     stock:{type:Number, min:0, default:0},
+    cover:{type: String, trim:true, default: "https://res.cloudinary.com/dwkafwiwila/image/upload/v1772654099/400x600_lwcdfb.png"},
     consoles:[{type:mongoose.Schema.Types.ObjectId, ref:"Console"}],
-    validate: {
-        validator: (consoles) => consoles.length > 0,
-        message: "El videojuego tiene que estar al menso en una consola",
-    },
+    
 },  {
-    timestamps = true,
-    versionKey = false,
+    timestamps: true,
+    versionKey: false,
 },
 );
 const Videogame = mongoose.model("Videogame", videogameSchema);
