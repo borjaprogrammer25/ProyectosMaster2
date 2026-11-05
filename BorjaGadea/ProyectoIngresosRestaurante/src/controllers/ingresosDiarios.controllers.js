@@ -36,4 +36,13 @@ const createIngresoDiario = async(req, res) => {
     }
 };
 
+//Borrar ingresoDiario
+
+//buscar por fechaIngresoDiario
+
+//buscar por semanaIngresoDiario
+
+//buscar por anio
+
+
 module.exports = {getAllIngresosDiarios, getIngresoById, createIngresoDiario};
