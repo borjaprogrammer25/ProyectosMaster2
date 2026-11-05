@@ -3,7 +3,7 @@ const createError = require("../../utils/createError");
 
 const getAllVideogames = async (req, res, next) => {
     try {
-        const videogames = await Videogame.find();
+        const videogames = await Videogame.find().populate("consoles", "name brand");
         return res.status(200).json(videogames);
     } catch (error) {
         return next(error);

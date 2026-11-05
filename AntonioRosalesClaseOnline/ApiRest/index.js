@@ -21,7 +21,7 @@ server.get("/", (req, res) => {
 });
 
 server.use("/consoles", consolesRouter);
-server.use("/videogames", videogamesRouter);
+server.use("/videogames", videogamesRouter);    
 
 //Middleware ruta no encontrada
 server.use((req, res) => {

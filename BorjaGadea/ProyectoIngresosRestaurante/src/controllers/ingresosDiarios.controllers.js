@@ -1,16 +1,17 @@
 const IngresoDiario = require("../models/ingresoDiario.model");
+const createError = require("../utils/createError");
 
-const getAllIngresosDiarios = async(req, res) => {
+const getAllIngresosDiarios = async(req, res, next) => {
     try {
         const ingresosDiarios = await IngresoDiario.find();
         return res.status(200).json(ingresosDiarios);
     } catch (error) {
-        return res.status(500).json({message:"Error obteniendo todos los ingresos", error: error.message});
+        return next(error);
     }
 };
 
 //Metodo get para obtener un ingreso por id
-const getIngresoById = async(req, res) => {
+const getIngresoById = async(req, res, next) => {
     try {
         const {id} = req.params;
         const ingresoDiario = await IngresoDiario.findById(id);
@@ -21,18 +22,18 @@ const getIngresoById = async(req, res) => {
         }
         return res.status(200).json(ingresoDiario);
     } catch(error) {
-        return res.status(500).json({message: "Error obteniendo el ingreso", error: error.message});
+        return next(error);
     }
 };
 
 //Crear un ingreso
-const createIngresoDiario = async(req, res) => {
+const createIngresoDiario = async(req, res, next) => {
     try {
         const newIngreso = new Ingreso(req.body);
         await newIngreso.save();
         return res.status(201).json(newIngreso);
     } catch(error) {
-        return res.status(500).json({message: "Error creando el ingreso", error: error.message});
+        return next(error);
     }
 };
 

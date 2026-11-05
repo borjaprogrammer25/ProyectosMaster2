@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "seed_consoles": "node ./src/seeds/consoles.seed.js",
+    "seed_videogames": "node ./src/seeds/videogames.seed.js"
   },
   "keywords": [],
   "author": "Borja Gadea Soler - borjaprogrammer@gmail.com",

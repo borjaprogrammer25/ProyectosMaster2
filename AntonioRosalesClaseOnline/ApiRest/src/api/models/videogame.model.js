@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { validate } = require("./console.model");
 
 const GENRES = [
-    "Action", "Adventures", "RPG", "Shooter", "Sports", "Racing", "Strategy", "Simulation", "Platform", 
+    "Action", "Adventure", "RPG", "Shooter", "Sports", "Racing", "Strategy", "Simulation", "Platform", 
     "Puzzle", "Horror", "Indie", "Other"
 ];
 const PEGI_VALUES = [3, 7, 12, 16, 18];
