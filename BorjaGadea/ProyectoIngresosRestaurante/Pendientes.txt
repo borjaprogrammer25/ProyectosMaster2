@@ -1,0 +1,9 @@
+modificar ingresos controller, quitando los errores
+añadir controllers gastos y proveedor
+añadir lineas index
+crear insomia 
+routes gastos y proveedor
+añadir semillas ingresos, gastos y proveedor
+comprobar en BD
+añadir populates en controllers para ver que queremos mostrar en cada metodo
+añadir metodos en controller que no sean solo CRUD

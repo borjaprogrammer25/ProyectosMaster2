@@ -38,6 +38,17 @@ const createIngresoDiario = async(req, res, next) => {
 };
 
 //Borrar ingresoDiario
+const deleteIngresoDiario = async(req, res, next) => {
+    try {
+        const deletedIngresoDiario = await IngresoDiario.findByIdAndDelete(req.params.id);
+        if(!deletedIngresoDiario){
+            return next(createError("Ingreso no encontrado", 404));
+        }
+        return res.status(200).json(deletedIngresoDiario);
+    } catch(error){
+        return next(error);
+    }
+};
 
 //buscar por fechaIngresoDiario
 
@@ -46,4 +57,4 @@ const createIngresoDiario = async(req, res, next) => {
 //buscar por anio
 
 
-module.exports = {getAllIngresosDiarios, getIngresoById, createIngresoDiario};
+module.exports = {getAllIngresosDiarios, getIngresoById, createIngresoDiario, deleteIngresoDiario};
