@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const connect = require("./src/config/db");
 const ingresosRouter = require("./src/routes/ingresosDiarios.routes");
+const proveedoresRouter = require("./src/routes/proveedores.routes");
 const server = express();
 server.use(express.json());
 connect();
@@ -15,6 +16,7 @@ server.get("/", (req, res) => {
 });
 
 server.use("/ingresos", ingresosRouter);
+server.use("/proveedores", proveedoresRouter);
 
 //Middleware de errores generales
 server.use((error, req, res) => {
